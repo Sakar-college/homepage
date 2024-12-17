@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="cascade.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div class="left">
+            <img src="D:/reddita.png" class="reda" onmouseover="showTooltip(event, 'welcome to reddit')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)">
+            <h3 onmouseover="showTooltip(event, 'welcome to reddit')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)"><strong>reddit</strong></h3>
+        </div>
+        <div class="center">
+            <div class="search-container">
+                <i class="ri-search-line"></i>
+                <input type="text" placeholder="Search..." class="search">
+            </div>
+        </div>
+        <div class="right">
+            <img src="D:/icont.png" class="target" onmouseover="showTooltip(event, 'advertise with Reddit')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)">
+            <i class="ri-wechat-2-line" onmouseover="showTooltip(event, 'Start a New Chat')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)"></i>
+            <i class="ri-notification-3-line" onmouseover="showTooltip(event, 'View Notification')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)"></i>
+            <i class="ri-account-circle-line" onmouseover="showTooltip(event, 'Configure Settings')" onmouseout="hideTooltip()" onmousemove="moveTooltip(event)"></i>
+        </div>
+        <div id="tooltip" class="tooltip"></div>
+    </header>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>Popular</h3>
+            <ul>
+                <li><a href="#"><i class="ri-home-4-line">      Home</i> </a></li>
+                <li><a href="#"><i class="ri-share-circle-line"></i>        Popular</a></li>
+                <li><a href="#"><i class="ri-user-search-line"></i>     Explore</a></li>
+                <li><a href="#"><i class="ri-add-circle-line"></i>      All</a></li>
+            </ul>
+            <h3>Costum feeds        <i class="ri-arrow-up-line"></i></h3>
+            <p><a href="#"><i class="ri-add-line"></i>      Create a custom feed </a></p>
+            <h3>COMMUNITIES</h3>
+            <ul>
+                <li><a href="#"> <i class="ri-add-line"></i>     Create a community</a></li>
+                <li><a href="#">r/aww</a></li>
+                <li><a href="#">r/funny</a></li>
+                <li><a href="#">r/programming</a></li>
+                <li><a href="#">r/pcmasterrace</a></li>
+                <li><a href="#">r/television</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Welcome to Reddit</h1>
+            <p>This is a Reddit clone where you can interact with different posts, view comments, and more!</p>
+        </div>
+    </div>
+
+    <script>
+        function showTooltip(event, message) {
+            var tooltip = document.getElementById('tooltip');
+            tooltip.textContent = message;
+            tooltip.style.display = 'block';
+            moveTooltip(event);
+        }
+
+        function moveTooltip(event) {
+            var tooltip = document.getElementById('tooltip');
+            var x = event.clientX + 10;
+            var y = event.clientY + 10;
+            tooltip.style.left = x + 'px';
+            tooltip.style.top = y + 'px';
+        }
+
+        function hideTooltip() {
+            document.getElementById('tooltip').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
